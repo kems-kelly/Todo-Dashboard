@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to do dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="app" id="appRoot">
+      <!-- SIDEBAR -->
+      <div class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="logo" aria-hidden>Tr</div>
+          <div>
+            <div class="app-title">Taskora</div>
+            <div class="muted" style="font-size: 12px">Productivity</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Quick Overview</div>
+
+          <div class="nav-item active" data-key="today" aria-pressed="true">
+            <div class="icon">
+              <i class="ri-mail-line"></i>
+            </div>
+            <span>Inbox</span>
+          </div>
+
+          <div class="nav-item" data-key="inbox">
+            <div class="icon">
+              <i class="ri-sun-line"></i>
+            </div>
+            <span>Today</span>
+          </div>
+
+          <div class="nav-item" data-key="upcoming">
+            <div class="icon">
+              <i class="ri-calendar-line"></i>
+            </div>
+            <span>Upcoming</span>
+          </div>
+
+          <div class="nav-item" data-key="priority">
+            <div class="icon">
+              <i class="ri-flag-line"></i>
+            </div>
+            <span>Priority</span>
+          </div>
+
+          <div class="nav-item" data-key="completed">
+            <div class="icon">
+              <i class="ri-checkbox-circle-line"></i>
+            </div>
+            <span>Completed</span>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+          <div class="section-title">Projects & Spaces</div>
+
+          <div class="nav-item" data-key="work">
+            <div class="icon">
+              <i class="ri-folder-line"></i>
+            </div>
+            <span>Work</span>
+          </div>
+
+          <div class="nav-item" data-key="errands">
+            <div class="icon">
+              <i class="ri-shake-hands-fill"></i>
+            </div>
+            <span>@Errands</span>
+          </div>
+
+          <div class="nav-item" data-key="meetings">
+            <div class="icon">
+              <i class="ri-projector-2-line"></i>
+            </div>
+            <span>Meetings</span>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+          <div class="section-title">Settings & Accounts</div>
+
+          <div class="nav-item" data-key="help">
+            <div class="icon">
+              <i class="ri-settings-3-line"></i>
+            </div>
+            <span>Help & Support</span>
+          </div>
+
+          <div class="nav-item" data-key="profile">
+            <div class="icon">
+              <i class="ri-user-line"></i>
+            </div>
+            <span>User Profile</span>
+          </div>
+        </div>
+
+        <div class="footer-note">Taskora • UI</div>
+      </div>
+
+      <div class="main">
+        <header class="header">
+          <div class="header-left">
+            <button
+              class="hamburger"
+              id="hamburger"
+              aria-label="Toggle menu"
+              title="Toggle menu"
+            >
+              <i class="ri-menu-line"></i>
+            </button>
+
+            <div class="date-select" role="listbox" aria-label="Select date">
+              <span style="font-size: 13px">08 Oct, 2025</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden
+              >
+                <path
+                  d="M6 9l6 6 6-6"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="header-center">
+            <div class="search" role="search">
+              <i class="ri-search-line"></i>
+              <input
+                type="search"
+                placeholder="search"
+                aria-label="Search tasks"
+              />
+            </div>
+            <button class="btn" id="addBtn" aria-label="Add to list">
+              ＋ Add To List
+            </button>
+          </div>
+
+          <div class="header-actions">
+            <div class="profile" aria-hidden>
+              <div class="avatar">J</div>
+              <div class="profile-info">
+                <div class="name">Joan Doe</div>
+                <div class="role">Admin</div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="content" id="mainContent">
+          <div class="page-header">
+            <div class="page-title">Todo List</div>
+          </div>
+
+          <section class="cards" id="cardsGrid">
+            <article class="card white">
+              <div class="cardcontent">
+                <div>
+                  <h4>Team Meeting</h4>
+                  <p>
+                    Joan to complete the first draft of the Taskora onboarding
+                    flow by Friday
+                  </p>
+                </div>
+              </div>
+              <div class="time">10:30AM -12:00PM</div>
+            </article>
+
+            <article class="card blue">
+              <div class="meta">
+                <div>
+                  <h4>Status Update</h4>
+                  <p>
+                    Core architecture is 90% complete. Backend API endpoints are
+                    ready for review.
+                  </p>
+                </div>
+              </div>
+              <div class="time">10:30AM -12:00PM</div>
+            </article>
+
+            <article class="card green">
+              <div class="meta">
+                <div>
+                  <h4>Team Meeting</h4>
+                  <p>
+                    Complete the first draft of the Taskora onboarding flow by
+                    Friday
+                  </p>
+                </div>
+              </div>
+              <div class="time">07:30AM -10:00AM</div>
+            </article>
+
+            <article class="card blue">
+              <div class="meta">
+                <div>
+                  <h4>Make Report for manager</h4>
+                  <p>
+                    Core architecture is 90% complete. Backend API endpoints are
+                    ready for review.
+                  </p>
+                </div>
+              </div>
+              <div class="time">10:30AM -12:00PM</div>
+            </article>
+
+            <article class="card green">
+              <div class="meta">
+                <div>
+                  <h4>Team Meeting</h4>
+                  <p>
+                    Complete the first draft of the Taskora onboarding flow by
+                    Friday
+                  </p>
+                </div>
+              </div>
+              <div class="time">07:30AM -10:00AM</div>
+            </article>
+
+            <article class="card white">
+              <div class="meta">
+                <div>
+                  <h4>Team Meeting</h4>
+                  <p>
+                    Joan to complete the first draft of the Taskora onboarding
+                    flow by Friday
+                  </p>
+                </div>
+              </div>
+              <div class="time">10:30AM -12:00PM</div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
